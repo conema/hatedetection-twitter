@@ -6,8 +6,11 @@ import joblib
 
 import numpy as np
 
+def same_x(x):
+  return x
+
 def classification(tweets):
-    preprocessed_df = tweets.drop(columns=['tweet','tags'])
+    preprocessed_df = tweets.drop(columns=['tweet'])
 
     # load fitted tfidf
     vectorizer = joblib.load("dataset/feature.joblib")
